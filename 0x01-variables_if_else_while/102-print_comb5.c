@@ -1,45 +1,44 @@
 #include <stdio.h>
+#include <unistd.h>
 /**
- *
- * * main - Printing combinations of two two-digit numbers.*
- *
- * * Return: Always 0. */
-
+ *  * main - Entry point
+ *   * Description: prints all possible combination of 2-digit numbers
+ *    * Return: Always 0 (success)
+ *     */
 int main(void)
-
 {
-	int nb1, nb2;
+		int c, i, k, j;
 
-	for (nb1 = 0; nb1 <= 98; nb1++)
+			for (c = 48; c <= 57; c++)
+					{
+								for (i = 48; i <= 57; i++)
+											{
+															for (k = 48; k <= 57; k++)
+																			{
+																								for (j = 48; j <= 57; j++)
+																													{
+																																		if (((k + j) > (c + i) &&  k >= c) || c < k)
+																																							{
+																																													putchar(c);
+																																																		putchar(i);
+																																																							putchar(' ');
+																																																												putchar(k);
+																																																																	putchar(j);
 
-	{
-
-		for (nb2 = nb1 + 1; nb2 <= 99; nb2++)
-
-		{
-			putchar((nb1 / 10) + '0');
-			putchar((nb1 % 10) + '0');
-			putchar(' ');
-			putchar((nb2 / 10) + '0');
-			putchar((nb2 % 10) + '0');
-
-			if (nb1 == 98 && nb2 == 99)
-
-				break;
-
-			putchar(',');
-			putchar(' ');
-
-					}
-
-			}
-
-
-
-		putchar('\n');
-
-
-
-			return (0);
-
+																																																																						if (c + i + k + j == 227 && c == 57)
+																																																																												{
+																																																																																		break;
+																																																																																							}
+																																																																											else
+																																																																																	{
+																																																																																							putchar(',');
+																																																																																												putchar(' ');
+																																																																																																	}
+																																																																															}
+																																						}
+																											}
+																	}
+									}
+				putchar('\n');
+					return (0);
 }
